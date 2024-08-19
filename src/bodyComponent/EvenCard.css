@@ -1,0 +1,39 @@
+.eventCard{
+    display:flex;
+    justify-content: space-between;
+    justify-items: center;
+    margin-left: 10px;
+
+}
+.event_heading{
+    color: rgb(0, 102, 0);
+    font: bold;
+    margin-left: 50px;
+    margin-top: 30px;
+    /*text-decoration: underline;*/
+}
+
+.card_main_div{
+    background-color: rgb(235, 235, 235);
+    padding: 5px;
+    
+}
+.card:hover{
+    box-shadow: 5px 10px 20px 1px rgba(0,0,0,0.253);
+
+}
+.card_image_top{
+    transform: scale(1);
+    transition: transform 0.5s ease;
+    
+}
+.card_image_top:hover{
+    transform: scale(1.8);
+}
+.overflow{
+    overflow: hidden;
+}
+.event_style{
+    margin-right: 50px;
+}
+

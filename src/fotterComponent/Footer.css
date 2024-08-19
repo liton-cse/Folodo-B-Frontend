@@ -1,0 +1,44 @@
+
+hr{
+    color:white !important;
+    width: 100%;
+}
+
+.footer{
+    background-color: #2d2d32;
+}
+.sb_footer {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    padding:40px;
+    color: white;
+    margin-left: 20px;
+}
+a{
+    color: rgb(175,175,179);
+    text-decoration: none;
+}
+a:hover{
+    color: chartreuse;
+}
+.sb_footer_copyright{
+    text-align: center;
+    color: white;
+    font-size: small;
+}
+.contact{
+    color: rgb(175,175,179);
+}
+
+
+
+
+
+
+
+
+
+
+
+
