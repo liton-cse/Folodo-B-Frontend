@@ -1,0 +1,81 @@
+.search-heading{
+    margin-left: 80px;
+    margin-bottom: 20px;
+}
+
+.general-div-header {
+    display: flex;
+    justify-content: space-between; /* Adjusts space between the two divs */
+    align-items: center; /* Aligns the items vertically in the center */
+    padding: 20px; /* Adds padding for spacing */
+  }
+  
+
+  
+  .search-heading {
+    margin-bottom: 20px; /* Adjust spacing below the heading */
+  }
+
+  .register-header{
+    margin-right: 80px;
+  }
+  .register-header h4{
+    margin-bottom: 20px;
+  }
+
+  .straight-line{
+    position: relative;
+    padding-bottom: 30px;
+  }
+
+  .straight-line::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 90%; /* Only 50% width of the block */
+    height: 4px;
+    background-color: rgb(130, 231, 130);
+    transform: translateX(-50%); /* Center the underline */
+  }
+  .custom-search{
+    width: 300px;
+  }
+
+
+  /*general member Card style...*/
+
+  .general-card-heading{
+    text-align: center;
+    font-weight: bold;
+    font-size: 40px;
+    color: green;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5), 
+    -2px -2px 4px rgba(255, 255, 255, 0.5);
+}
+.custom-general-body{
+    text-align: left;
+}
+.custom-general-img-size{
+    width: 300px;  
+    height: 200px; 
+    object-fit: cover; 
+  }
+
+  .card_general_image_top_hover{
+    transform: scale(1);
+    transition: transform 0.5s ease;
+  }
+  .card_general_image_top_hover:hover{
+    transform: scale(1.2);
+    overflow: hidden;
+  }
+
+  .modal-body-img-general{
+  max-width: 100%; 
+  height: auto; 
+  max-height: 400px; 
+  object-fit: cover; 
+  border-radius: 5px;
+  margin-bottom: 10px;
+  }

@@ -1,0 +1,135 @@
+/*Mahogony Card.....*/
+.malign-heading{
+    text-align: center;
+    font-weight: bold;
+    font-size: 40px;
+    color: green;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5), 
+    -2px -2px 4px rgba(255, 255, 255, 0.5);
+}
+.malign-custom-card{
+    margin-left: 60px;
+    margin-right: 60px;
+}
+.custom-malign-body-content{
+    text-align: left;
+}
+
+.custom-malign-size {
+    width: 400px;  
+    height: 200px; 
+    object-fit: cover; 
+  }
+
+  .malign_card_image_top_hover{
+    transform: scale(1);
+    transition: transform 0.5s ease;
+  }
+  .malign_card_image_top_hover:hover{
+    transform: scale(1.2);
+    overflow: hidden;
+  }
+
+  /*Mahogony style content of get single data*/
+
+.mahogony_style{
+    display:flex;
+    justify-content: space-between;
+    margin: 0px 20px 20px 20px;
+    padding: 10px;
+}
+.mahogony_style p{
+    padding: 10px;
+}
+.heading_mahogony{
+    margin-left: 40px;
+    margin-top: 40px;
+
+}
+.mahogony_style img{
+    padding: 10px;
+    
+
+}
+
+
+/*Rain tree Style content*/
+.raintree_style{
+    display:flex;
+    justify-content: space-between;
+    margin: 0px 20px 20px 20px;
+    padding: 10px;
+}
+.raintree_style p{
+    padding: 10px;
+}
+.heading_raintree{
+    margin-left: 40px;
+    margin-top: 40px;
+
+}
+.raintree_style img{
+    padding: 10px;
+}
+
+
+/*Shisham tree Style content*/
+
+.shishamtree_style{
+    display:flex;
+    justify-content: space-between;
+    margin: 0px 20px 20px 20px;
+    padding: 10px;
+}
+.shishamtree_style p{
+    padding: 10px;
+}
+.heading_shishamtree{
+    margin-left: 40px;
+    margin-top: 40px;
+
+}
+.shishamtree_style img{
+    padding: 10px;
+}
+
+/*akashmonitree style content in here*/
+
+.akashmonitree_style{
+    display:flex;
+    justify-content: space-between;
+    margin: 0px 20px 20px 20px;
+    padding: 10px;
+}
+.akashmonitree_style p{
+    padding: 10px;
+}
+.heading_akashmonitree{
+    margin-left: 40px;
+    margin-top: 40px;
+
+}
+.akashmonitree_style img{
+    padding: 10px;
+}
+
+
+/*Eucalyptus style information */
+
+.eucalyptus_style{
+    display:flex;
+    justify-content: space-between;
+    margin: 0px 20px 20px 20px;
+    padding: 10px;
+}
+.eucalyptus_style p{
+    padding: 10px;
+}
+.heading_eucalyptus{
+    margin-left:40px;
+    margin-top: 40px;
+
+}
+.eucalyptus_style img{
+    padding: 10px;
+}

@@ -1,62 +1,174 @@
-import img1 from "../assets/images/aboutpc1.jpg";
+import "./Styles/about.css";
+import "../App.css";
+import { Container, Row, Col } from "react-bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { useState, useEffect } from "react";
+import axios from "axios";
+
 export default function About() {
+  const [objectives, setObjectives] = useState("");
+  const[missions, setMissions] =useState("");
+  const [visions,setVisions] =useState("");
+
+  useEffect(() => {
+    const fetchObjectives = async () => {
+      try {
+        const response = await axios.get("http://localhost:3000/api/about");
+        const objectivesData = response.data[0].objective;
+        const missionsData= response.data[0].mission;
+        const visionsData= response.data[0].vision;
+        console.log(response.data[0]);
+        setObjectives(objectivesData);
+        setMissions(missionsData);
+        setVisions(visionsData);
+      } catch (error) {
+        console.error("Error fetching objectives:", error);
+      }
+    };
+
+    fetchObjectives();
+  }, []);
+
+  
+  const renderObjectivesAsList = () => {
+    if (!objectives) return null;
+
+   
+    const sentences = objectives
+      .split(".")
+      .filter((sentence) => sentence.trim().length > 0);
+
+    return sentences.map((sentence, index) => (
+      <li key={index} className="custom-li">
+        {sentence.trim()}.
+      </li> 
+    ));
+  };
+
+  const renderMissionAsList = () => {
+    if (!missions) return null;
+
+   
+    const sentences = missions
+      .split(".")
+      .filter((sentence) => sentence.trim().length > 0);
+
+    return sentences.map((sentence, index) => (
+      <li key={index} className="custom-li">
+        {sentence.trim()}.
+      </li> 
+    ));
+  };
+  const renderVisionAsList = () => {
+    if (!visions) return null;
+
+   
+    const sentences = visions
+      .split(".")
+      .filter((sentence) => sentence.trim().length > 0);
+
+    return sentences.map((sentence, index) => (
+      <li key={index} className="custom-li">
+        {sentence.trim()}.
+      </li> 
+    ));
+  };
   return (
-    <div>
-      <div className="about_header">
-        <div className="about_div_1">
-          <span style={{ fontSize: "24px", fontWeight: "bold" }}>
-            Objectives and mission of the Organization
-          </span>
-          <p>
-            We want to plant fruit trees all over the country and make people
-            aware of implanting fruit plants because we are, in multidimensional
-            ways, related to fruit plants and the fruit itself. By increasing
-            the supply of local fruits, we can easily face the following issues:
-          </p>
-          <ol style={{ listStyleType: "circle" }}>
-            <li>Minimize malnutrition problem of the country.</li>
-            <li>
-              Decrease the fruit import dependency and accelerate economic
-              advancement.
-            </li>
-            <li>
-              Eradicate the use of chemical on fruits by supplying local fruit
-              demands.
-            </li>
-            <li>
-              Provide a good source of food and safety for birds and insects
-              that will eventually secure natural equilibrium.
-            </li>
-            <li>
-              Sustain the fertility of local land by implanting locally fit
-              plants.
-            </li>
-            <li>
-              Decrease the sense and mentality of seeing plants as a mere source
-              of money and wood.
-            </li>
-            <li>
-              Fruit trees contribute to maintain mutual mate ship and it’s a
-              tradition of our Bengali culture to felicitate friends and family
-              and provide them with fruits, we want to revive that very culture
-              of our own.
-            </li>
-            <li>Nurture the habit of welfare without interest.</li>
-            <li>
-              Make priority of our layer-loam soil suited trees over the foreign
-              harmful plants.
-            </li>
-            <li>
-              Perform our duties to face the threat of global warming and carbon
-              emitting and contribute to raise awareness.
-            </li>
-          </ol>
-        </div>
-        <div className="About_image_div">
-          <img src={img1} alt="About picture" />
-        </div>
-        x
-      </div>
-    </div>
+    <>
+      <Container fluid className="my-5">
+        <div className="block1"></div>
+        <Row className="my-3 objective">
+          <Col
+            md={4}
+            className="d-flex justify-content-center align-items-center"
+          >
+            <img
+              src="/about1.jpg"
+              alt="First Image"
+              className="img-fluid about-img"
+            />
+          </Col>
+
+          <Col md={4} className="d-flex flex-column">
+            <Row className="about-heading">
+              <h2>Objectives</h2>
+            </Row>
+            <Row>
+              <ul className="custom-list justify-content-center align-items-center ms-3">
+                {renderObjectivesAsList()}
+              </ul>
+            </Row>
+          </Col>
+
+          <Col
+            md={4}
+            className="d-flex justify-content-center align-items-center"
+          >
+            <img
+              src="/about2.jpg"
+              alt="Second Image"
+              className="img-fluid about-img"
+            />
+          </Col>
+        </Row>
+        <div className="block"></div>
+        {/*mission and vision*/}
+        <Row className="my-4 mission-vission">
+          <Col md={6} className="d-flex flex-column">
+            <Row className="about-heading">
+              <h2>Mission</h2>
+            </Row>
+            <Row>
+              <ul className="custom-list justify-content-center align-items-center ms-3">
+                {renderMissionAsList()}
+              </ul>
+            </Row>
+          </Col>
+          <Col md={6} className="d-flex flex-column">
+            <Row className="about-heading">
+              <h2>Vision</h2>
+            </Row>
+            <Row>
+              <ul className="custom-list justify-content-center align-items-center ms-3">
+                {renderVisionAsList()}
+              </ul>
+            </Row>
+          </Col>
+        </Row>
+
+        <Row className="mx-5">
+        <Col
+            md={4}
+            className="d-flex justify-content-center align-items-center"
+          >
+            <img
+              src="/pic1.jpg"
+              alt="First Image"
+              className="img-fluid about-img"
+            />
+          </Col>
+          <Col
+            md={4}
+            className="d-flex justify-content-center align-items-center"
+          >
+            <img
+              src="/pic2.jpg"
+              alt="First Image"
+              className="img-fluid about-img"
+            />
+          </Col>
+          <Col
+            md={4}
+            className="d-flex justify-content-center align-items-center"
+          >
+            <img
+              src="/pic3.jpg"
+              alt="First Image"
+              className="img-fluid about-img"
+            />
+          </Col>
+        </Row>
+      </Container>
+    </>
   );
 }

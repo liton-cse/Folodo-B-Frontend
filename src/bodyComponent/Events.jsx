@@ -1,26 +1,15 @@
-import { useParams } from "react-router-dom";
-import news from "../data/event.json";
-import "../App.css";
+import EventCard from "./EvenCard";
+import "./EvenCard.css";
 
 export default function Events() {
-  let { id } = useParams();
-
-  const singleNews = news.find((item) => item.id == id);
 
   return (
-    <div>
-      <div className="event_heading">
-        <h3>{singleNews?.title}</h3>
-        <div className="event_style">
-          <p>{singleNews?.description}</p>
-          <img
-            src={singleNews?.image}
-            alt="event pic"
-            width="100%"
-            height="300px"
-          />
-        </div>
+    <div className="my-5">
+      <div className="all-news-event-heading">
+        <h2>All Events</h2>
       </div>
+      <EventCard/>
     </div>
+   
   );
 }

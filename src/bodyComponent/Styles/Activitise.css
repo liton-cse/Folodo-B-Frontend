@@ -1,0 +1,10 @@
+/*Acitivies content style */
+
+.activities_main_div{
+    display: flex;
+    justify-content: space-between;
+    margin:20px;
+}
+.activities_content_div{
+    padding:10px 30px 10px 10px;
+}

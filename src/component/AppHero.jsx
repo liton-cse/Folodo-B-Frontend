@@ -1,30 +1,44 @@
 import Carousel from "react-bootstrap/Carousel";
-import { heroData } from "./SliderData";
+import "./AppHero.css";
+import { useState, useEffect } from "react";
+import axios from "axios";
+import { Container } from "react-bootstrap";
+
 
 function AppHero() {
+  const [items, setItems] = useState([]);
+
+  useEffect(() => {
+    fetchItems();
+  }, []);
+
+  const fetchItems = async () => {
+    const response = await axios.get('http://localhost:3000/api/slider');
+    setItems(response.data);
+  };
+
   return (
-    <section id="home" className="hero-block">
+    <Container fluid className="carousel-container">
       <Carousel>
-        {heroData.map((hero) => {
+        {items.map((item) => {
           return (
-            <Carousel.Item key={hero.id}>
-              <img
-                className="d-block w-100"
-                src={hero.image}
-                alt={"slide" + hero.id}
-              />
-              <Carousel.Caption>
-                <h3>{hero.title}</h3>
-                <p>{hero.description}</p>
-                <a className="btn btn-primary" href={hero.link}>
-                  Learn More <i className="fas fa-chevron-right"></i>
-                </a>
-              </Carousel.Caption>
+            <Carousel.Item interval={5000} key={item._id}>
+              <div className="d-block w-100 carousel-div">
+                <img
+                  src={`http://localhost:3000/slider-image/${item.image.split('/').pop()}`}
+                  alt="Item"
+                />
+                {/* Title and SubTitle Display */}
+                <Carousel.Caption className="carousel-caption">
+                  <h2 className="carousel-title">{item.title}</h2>
+                  <h6 className="carousel-subtitle">{item.subTitle}</h6>
+                </Carousel.Caption>
+              </div>
             </Carousel.Item>
           );
         })}
       </Carousel>
-    </section>
+      </Container>
   );
 }
 

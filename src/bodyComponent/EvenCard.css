@@ -1,3 +1,4 @@
+/*Single event and news card style singleNews and Single Event component Style*/
 .eventCard{
     display:flex;
     justify-content: space-between;
@@ -6,11 +7,17 @@
 
 }
 .event_heading{
-    color: rgb(0, 102, 0);
+    color: black;
     font: bold;
-    margin-left: 50px;
-    margin-top: 30px;
-    /*text-decoration: underline;*/
+    text-align: left;
+    margin-top: 50px;
+     /*text-decoration: underline;*/
+}
+.event_style{
+  margin-right: 30px;
+  color: black;
+  text-align: left;
+  font-size: 20px;
 }
 
 .card_main_div{
@@ -20,7 +27,6 @@
 }
 .card:hover{
     box-shadow: 5px 10px 20px 1px rgba(0,0,0,0.253);
-
 }
 .card_image_top{
     transform: scale(1);
@@ -33,7 +39,68 @@
 .overflow{
     overflow: hidden;
 }
+
+
 .event_style{
-    margin-right: 50px;
+  display:flex;
+  justify-content: space-between;
 }
+
+.event_heading{
+  margin-left: 50px;
+  margin-top: 50px;
+  padding: 5px;
+  
+
+}
+.event_style img{
+  padding: 10px;
+  box-shadow: 0px 0.5px 0.5px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+/*Heading Styling..........*/
+.all-news-event-heading{
+  margin-left: 50px;
+  font-weight: bold;
+  text-align: left;
+  margin-bottom: 30px;
+  text-decoration:underline;
+  color: green;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5), 
+  -2px -2px 4px rgba(255, 255, 255, 0.5);
+}
+
+
+
+/*Style for EventCard2.....*/
+
+.custom-size {
+    width: 400px;  /* Set the width to 100 pixels */
+    height: 200px; /* Set the height to 100 pixels */
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+  }
+
+  .card_image_top_hover{
+    transform: scale(1);
+    transition: transform 0.5s ease;
+  }
+  .card_image_top_hover:hover{
+    transform: scale(1.2);
+    overflow: hidden;
+  }
+
+
+  /*card button..... for evencard2*/
+  .card-button{
+    font-weight: 16px;
+  }
+  .card-button:hover{
+    box-shadow: 5px 10px 20px 1px rgba(0,0,0.240,0.240);
+  }
+  
+  .card-body-custom{
+    text-align: left;
+  }
+
+
 

@@ -1,0 +1,56 @@
+/*About section style....*/
+.about-img{
+    height: 320px;
+    width: 420px;
+    border-radius: 10px;
+}
+.about-heading{
+    font-weight: bold;
+    text-decoration:underline;
+    color: green;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5), 
+    -2px -2px 4px rgba(255, 255, 255, 0.5);
+}
+.objective{
+    margin-left: 40px;
+    margin-right:40px;
+
+}
+
+.mission-vission{
+    margin-left: 70px;
+    margin-right: 70px;
+}
+
+/* AboutPage.css */
+.custom-list {
+    list-style-type: none; 
+    padding-left: 0; 
+  }
+  
+  .custom-li {
+    position: relative;
+    padding-left: 30px; /* Create space for custom bullet */
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #333;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .custom-li::before {
+    content: '\25BA'; 
+    color: #007bff; 
+    font-size: 16px;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+
+  
+
+  
+  
+
+  
+
+

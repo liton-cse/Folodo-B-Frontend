@@ -8,9 +8,10 @@ import { Link } from "react-router-dom";
 
 function Header() {
   return (
-    <Navbar expand="lg" className="bg-body-tertiary">
+      <>
+      <Navbar expand="lg" className="bg-body-tertiary navbar-fixed">
       <Container>
-        <Navbar.Brand href="#home">
+        <Navbar.Brand href="/">
           <img
             src={img}
             width="100"
@@ -19,7 +20,7 @@ function Header() {
             alt="Folodo Bangladesh logo"
           />
         </Navbar.Brand>
-        <Navbar.Brand href="#home" className="ms-4" style={{ color: "green" }}>
+        <Navbar.Brand href="/" className="ms-4 main-header-style">
           ফলদ বাংলাদেশ ফাউন্ডেশন
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -48,7 +49,7 @@ function Header() {
             </Nav.Link>
             <Nav.Link
               as={Link}
-              to="/events"
+              to="/event"
               className="mx-1 rounded text-dark hover-menu-item"
             >
               Events
@@ -106,14 +107,7 @@ function Header() {
               >
                 General Member
               </NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item
-                as={Link}
-                to="/division"
-                className="rounded text-dark hover-menu-item"
-              >
-                Division
-              </NavDropdown.Item>
+
             </NavDropdown>
 
             <NavDropdown
@@ -136,7 +130,7 @@ function Header() {
               </NavDropdown.Item>
               <NavDropdown.Item
                 as={Link}
-                to="/shishu"
+                to="/shisham"
                 className="rounded text-dark hover-menu-item"
               >
                 Shisham tree
@@ -151,7 +145,7 @@ function Header() {
               </NavDropdown.Item>
               <NavDropdown.Item
                 as={Link}
-                to="/ukelipotas"
+                to="/eucalyptus"
                 className="rounded text-dark hover-menu-item"
               >
                 Eucalyptus
@@ -161,6 +155,7 @@ function Header() {
         </Navbar.Collapse>
       </Container>
     </Navbar>
+      </>
   );
 }
 export default Header;

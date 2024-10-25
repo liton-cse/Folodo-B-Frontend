@@ -1,0 +1,15 @@
+.custom-card{
+    margin-left: 60px;
+    margin-right: 60px;
+}
+.custom-body-content{
+    text-align: left;
+}
+.founder-heading{
+    text-align: center;
+    font-weight: bold;
+    font-size: 40px;
+    color: green;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5), 
+    -2px -2px 4px rgba(255, 255, 255, 0.5);
+}
