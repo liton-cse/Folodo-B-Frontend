@@ -41,8 +41,8 @@ const Footer = () =>{
           <div>
             <h4>Our Location</h4>
             <div>
-              <p>ফলদ বাংলাদেশ ফাউন্ডেশন</p>
-              <p>৯-ক, খ [২য় তলা] তেজগাঁও শিল্প এলাকা, ঢাকা</p>
+              <p>Tree Health Awareness</p>
+              <p>9-A, B [2nd floor] Tejgao Industrial Area, Dhaka</p>
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29212.338972503778!2d90.34923130432252!3d23.763693212623867!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c75f68e3e199%3A0x1091c4aa2634b568!2sTejgaon%2C%20Dhaka!5e0!3m2!1sen!2sbd!4v1708811133915!5m2!1sen!2sbd"
                 width="400"

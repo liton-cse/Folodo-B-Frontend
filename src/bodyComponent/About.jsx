@@ -7,16 +7,18 @@ import axios from "axios";
 
 export default function About() {
   const [objectives, setObjectives] = useState("");
-  const[missions, setMissions] =useState("");
-  const [visions,setVisions] =useState("");
+  const [missions, setMissions] = useState("");
+  const [visions, setVisions] = useState("");
 
   useEffect(() => {
     const fetchObjectives = async () => {
       try {
-        const response = await axios.get("http://localhost:3000/api/about");
+        const response = await axios.get(
+          "https://fbbackend-server.onrender.com/api/about"
+        );
         const objectivesData = response.data[0].objective;
-        const missionsData= response.data[0].mission;
-        const visionsData= response.data[0].vision;
+        const missionsData = response.data[0].mission;
+        const visionsData = response.data[0].vision;
         console.log(response.data[0]);
         setObjectives(objectivesData);
         setMissions(missionsData);
@@ -29,11 +31,9 @@ export default function About() {
     fetchObjectives();
   }, []);
 
-  
   const renderObjectivesAsList = () => {
     if (!objectives) return null;
 
-   
     const sentences = objectives
       .split(".")
       .filter((sentence) => sentence.trim().length > 0);
@@ -41,14 +41,13 @@ export default function About() {
     return sentences.map((sentence, index) => (
       <li key={index} className="custom-li">
         {sentence.trim()}.
-      </li> 
+      </li>
     ));
   };
 
   const renderMissionAsList = () => {
     if (!missions) return null;
 
-   
     const sentences = missions
       .split(".")
       .filter((sentence) => sentence.trim().length > 0);
@@ -56,13 +55,12 @@ export default function About() {
     return sentences.map((sentence, index) => (
       <li key={index} className="custom-li">
         {sentence.trim()}.
-      </li> 
+      </li>
     ));
   };
   const renderVisionAsList = () => {
     if (!visions) return null;
 
-   
     const sentences = visions
       .split(".")
       .filter((sentence) => sentence.trim().length > 0);
@@ -70,7 +68,7 @@ export default function About() {
     return sentences.map((sentence, index) => (
       <li key={index} className="custom-li">
         {sentence.trim()}.
-      </li> 
+      </li>
     ));
   };
   return (
@@ -137,7 +135,7 @@ export default function About() {
         </Row>
 
         <Row className="mx-5">
-        <Col
+          <Col
             md={4}
             className="d-flex justify-content-center align-items-center"
           >

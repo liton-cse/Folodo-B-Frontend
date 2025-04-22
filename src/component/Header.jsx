@@ -21,7 +21,7 @@ function Header() {
           />
         </Navbar.Brand>
         <Navbar.Brand href="/" className="ms-4 main-header-style">
-          ফলদ বাংলাদেশ ফাউন্ডেশন
+          Tree Health Awareness
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse>

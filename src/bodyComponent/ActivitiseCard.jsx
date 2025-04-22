@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Card, Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import "./EvenCard.css"
+import "./EvenCard.css";
 
 const ActivitiseCard = () => {
   const [items, setItems] = useState([]);
@@ -12,7 +12,9 @@ const ActivitiseCard = () => {
   }, []);
 
   const fetchItems = async () => {
-    const response = await axios.get("http://localhost:3000/api/activitise");
+    const response = await axios.get(
+      "https://fbbackend-server.onrender.com/api/activitise"
+    );
     setItems(response.data);
   };
 
@@ -24,7 +26,9 @@ const ActivitiseCard = () => {
             {/* Left Side: Image */}
             <Col md={4} xs={12}>
               <Card.Img
-                src={`http://localhost:3000/activitise-image/${item.image.split("/").pop()}`}
+                src={`https://fbbackend-server.onrender.com/activitise-image/${item.image
+                  .split("/")
+                  .pop()}`}
                 alt="Card image"
                 className="img-fluid custom-size card_image_top_hover"
               />
@@ -34,11 +38,9 @@ const ActivitiseCard = () => {
             <Col md={8} xs={12}>
               <Card.Body className="card-body-custom">
                 <Card.Title className="fw-bold">{item.title}</Card.Title>
+                <Card.Text>{`Presented by: ${item.author}`}</Card.Text>
                 <Card.Text>
-                    {`Presented by: ${item.author}`}
-                </Card.Text>
-                <Card.Text>
-                {item.description.length > 250
+                  {item.description.length > 250
                     ? item.description.substring(0, 250) + "..."
                     : item.description}
                 </Card.Text>

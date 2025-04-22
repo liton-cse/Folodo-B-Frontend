@@ -1,19 +1,21 @@
-import EventCard2 from "./EventCard2"
+import EventCard2 from "./EventCard2";
 import NewsCard from "./NewsCard";
 import LimitedActivitiseCard from "./LimitedActivitiseCard";
 import "./EvenCard.css";
 import "../App.css";
-import { useState,useEffect } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 
 export default function Home() {
-  const [item,setItem]=useState(null);
+  const [item, setItem] = useState(null);
   useEffect(() => {
     fetchItems();
   }, []);
 
   const fetchItems = async () => {
-    const response = await axios.get('http://localhost:3000/api/home');
+    const response = await axios.get(
+      "https://fbbackend-server.onrender.com/api/home"
+    );
     setItem(response.data);
   };
   if (!item) {
@@ -21,8 +23,8 @@ export default function Home() {
   }
 
   // Split the first word and the rest of the string
-  const firstWord = item.description.split(' ')[0]; 
-  const remainingText = item.description.substring(firstWord.length); 
+  const firstWord = item.description.split(" ")[0];
+  const remainingText = item.description.substring(firstWord.length);
 
   return (
     <div>
@@ -37,7 +39,12 @@ export default function Home() {
           </p>
         </div>
         <div className="home_header_div_2 img-container">
-          <img src={`http://localhost:3000/home-image/${item.image.split('/').pop()}`} alt="Home pic" />
+          <img
+            src={`https://fbbackend-server.onrender.com/home-image/${item.image
+              .split("/")
+              .pop()}`}
+            alt="Home pic"
+          />
         </div>
       </div>
       <div className="block"></div>
@@ -70,7 +77,7 @@ export default function Home() {
         </div>
         <div className="evenCard_div container">
           <div className="row con">
-            <NewsCard/>
+            <NewsCard />
           </div>
         </div>
       </div>
@@ -88,14 +95,12 @@ export default function Home() {
         </div>
         <div className="evenCard_div container">
           <div className="row con">
-            <LimitedActivitiseCard/>
+            <LimitedActivitiseCard />
           </div>
         </div>
       </div>
 
       <div className="block"></div>
-
-      
     </div>
   );
 }

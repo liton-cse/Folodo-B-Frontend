@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { Container } from "react-bootstrap";
 
-
 function AppHero() {
   const [items, setItems] = useState([]);
 
@@ -13,7 +12,9 @@ function AppHero() {
   }, []);
 
   const fetchItems = async () => {
-    const response = await axios.get('http://localhost:3000/api/slider');
+    const response = await axios.get(
+      "https://fbbackend-server.onrender.com/api/slider"
+    );
     setItems(response.data);
   };
 
@@ -25,7 +26,9 @@ function AppHero() {
             <Carousel.Item interval={5000} key={item._id}>
               <div className="d-block w-100 carousel-div">
                 <img
-                  src={`http://localhost:3000/slider-image/${item.image.split('/').pop()}`}
+                  src={`https://fbbackend-server.onrender.com/slider-image/${item.image
+                    .split("/")
+                    .pop()}`}
                   alt="Item"
                 />
                 {/* Title and SubTitle Display */}
@@ -38,7 +41,7 @@ function AppHero() {
           );
         })}
       </Carousel>
-      </Container>
+    </Container>
   );
 }
 
